@@ -50,6 +50,15 @@
         <button id="music-btn">🔊</button>
     </div>
 <div class="lyrics-container"></div>
+<script>
+  window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    preloader.style.opacity = '0';
+    setTimeout(() => {
+      preloader.style.display = 'none';
+    }, 500);
+  });
+</script>
 
     <script src="script.js"></script>
 
