@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500&display=swap"
+        rel="stylesheet">
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shhh... A Surprise Awaits</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="love-border top">I love you </div>
+    <div class="love-border bottom">I love you </div>
+    <div class="love-border left"><span>I love you </span></div>
+    <div class="love-border right"><span>I love you </span></div>
+
+    <div class="container">
+        <h1 id="main-text">Shhh... a surprise awaits!</h1>
+        <button class="reveal-btn" onclick="goToNext()">Click to Begin</button>
+
+        <div id="heart-container"></div>
+        <div class="sparkle-container">
+            <span class="sparkle"></span>
+            <span class="sparkle"></span>
+            <span class="sparkle"></span>
+            <span class="sparkle"></span>
+            <span class="sparkle"></span>
+        </div>
+
+        <div class="flowers">
+            <div class="flower top-left"></div>
+            <div class="flower top-right"></div>
+            <div class="flower bottom-left"></div>
+            <div class="flower bottom-right"></div>
+        </div>
+
+        <audio id="bg-music" loop>
+            <source src="music.mp3" type="audio/mpeg" />
+            Your browser does not support the audio element.
+        </audio>
+
+        <button id="music-btn">🔊</button>
+    </div>
+<div class="lyrics-container"></div>
+
+    <script src="script.js"></script>
+
+    <footer class="signature">
+        <p class="signature-line">Forever yours,</p>
+        <p class="signature-name">— Yuvraj 💌</p>
+    </footer>
+
+
+</body>
+
+</html>

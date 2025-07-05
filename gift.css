@@ -1,0 +1,209 @@
+/* Reset and Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #ffeef5;
+  overflow: hidden;
+}
+
+/* Fullscreen Poem Section */
+.poem-section {
+  width: 100vw;
+  height: 100vh;
+  padding: 20px;
+  background: linear-gradient(to bottom, #ffe4f0, #fff0f5);
+  background-image: url("tv3.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Floating soft glowing particles */
+.poem-section::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,0.4) 2px, transparent 2px),
+    radial-gradient(circle, rgba(255,255,255,0.3) 1.5px, transparent 1.5px),
+    radial-gradient(circle, rgba(255,255,255,0.2) 1px, transparent 1px);
+  background-size: 120px 120px;
+  background-position: 0 0, 60px 60px, 120px 120px;
+  animation: floatSparkles 60s linear infinite;
+  opacity: 0.5;
+  z-index: 0;
+}
+
+@keyframes floatSparkles {
+  0% {
+    background-position: 0 0, 60px 60px, 120px 120px;
+  }
+  100% {
+    background-position: 0 -1000px, 60px -940px, 120px -880px;
+  }
+}
+
+/* Title */
+.poem-section h2 {
+  font-size: 2.2rem;
+  color: #ff5e9c;
+  margin-bottom: 15px;
+  z-index: 2;
+  text-align: center;
+}
+
+/* Poem Block */
+.poem-lines {
+  background: rgba(255, 255, 255, 0.446);
+  padding: 20px;
+  border-radius: 16px;
+  max-width: 700px;
+  width: 90%;
+  box-shadow: 0 0 10px rgba(255, 182, 193, 0.2);
+  backdrop-filter: blur(5px);
+  z-index: 2;
+  overflow-y: auto;
+  max-height: 75vh;
+  text-align: center;
+}
+
+/* Poem Text Lines */
+.poem-lines p {
+  font-size: 1.78rem;
+  color: #2c2b2b;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeLine 0.7s ease-out forwards;
+  line-height: 1.5;
+  margin: 5px 0;
+}
+
+/* Responsive Shrink on Smaller Screens */
+@media (max-height: 700px) {
+  .poem-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .poem-lines p {
+    font-size: 1rem;
+  }
+}
+
+/* Poem Animation Keyframes */
+@keyframes fadeLine {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation delays */
+.poem-lines p:nth-child(1) { animation-delay: 0s; }
+.poem-lines p:nth-child(2) { animation-delay: 0.4s; }
+.poem-lines p:nth-child(3) { animation-delay: 0.8s; }
+.poem-lines p:nth-child(4) { animation-delay: 1.2s; }
+.poem-lines p:nth-child(6) { animation-delay: 1.6s; }
+.poem-lines p:nth-child(7) { animation-delay: 2s; }
+.poem-lines p:nth-child(8) { animation-delay: 2.4s; }
+.poem-lines p:nth-child(9) { animation-delay: 2.8s; }
+.poem-lines p:nth-child(11) { animation-delay: 3.2s; }
+.poem-lines p:nth-child(12) { animation-delay: 3.6s; }
+.poem-lines p:nth-child(13) { animation-delay: 4s; }
+.poem-lines p:nth-child(14) { animation-delay: 4.4s; }
+.poem-lines p:nth-child(16) { animation-delay: 4.8s; }
+.poem-lines p:nth-child(17) { animation-delay: 5.2s; }
+.poem-lines p:nth-child(18) { animation-delay: 5.6s; }
+.poem-lines p:nth-child(19) { animation-delay: 6s; }
+.poem-lines p:nth-child(21) { animation-delay: 6.4s; }
+.poem-lines p:nth-child(22) { animation-delay: 6.8s; }
+.continue-btn {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  background: #ff69b4;
+  color: white;
+  font-size: 1.2rem;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  z-index: 2;
+  box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.continue-btn:hover {
+  background: #ff4da6;
+  transform: scale(1.05);
+}
+.poem-section.fade-out {
+  animation: fadeOut 1s ease forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+}
+#petal-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+.love-floating-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.love-text {
+  position: absolute;
+  color: #ff8dcf;
+  font-size: 1.2rem;
+  font-weight: bold;
+  opacity: 0;
+  animation: floatLove 8s ease-in-out forwards;
+  font-family: 'Dancing Script', cursive;
+  white-space: nowrap;
+  text-shadow: 0 1px 5px rgba(255, 105, 180, 0.3);
+}
+
+@keyframes floatLove {
+  0% {
+    opacity: 0;
+    transform: translateY(100vh) scale(0.8);
+  }
+  10% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10vh) scale(1.2);
+  }
+}

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Forever Yours 💌</title>
+  <style>
+    .floating-heart {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  background: #ff5e99;
+  transform: rotate(-45deg);
+  left: 50%;
+  top: 100%;
+  animation: floatUp 6s linear infinite;
+  opacity: 0.8;
+  z-index: 9999;
+  border-radius: 50% 50% 0 0;
+}
+
+.floating-heart::before,
+.floating-heart::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #ff5e99;
+  border-radius: 50%;
+}
+
+.floating-heart::before {
+  top: -10px;
+  left: 0;
+}
+
+.floating-heart::after {
+  left: 10px;
+  top: 0;
+}
+.sakura-container {
+  position: fixed;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+.sakura {
+  position: absolute;
+  top: -10px;
+  width: 15px;
+  height: 15px;
+  background: radial-gradient(circle at 5px 5px, #ffb6c1 40%, transparent 41%);
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: fall linear forwards;
+}
+.to-final-page-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #ff6699;
+  color: white;
+  padding: 14px 24px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(255, 105, 135, 0.3);
+  transition: all 0.3s ease;
+  z-index: 9999;
+}
+
+.to-final-page-btn:hover {
+  background: #e0487f;
+  box-shadow: 0 8px 25px rgba(255, 105, 135, 0.5);
+  transform: scale(1.05);
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) rotate(-45deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(-45deg);
+    opacity: 0;
+  }
+}
+
+    /* Page styles */
+    html, body { margin:0; padding:0; height:100%; background: linear-gradient(135deg,#ffe6f0,#e6f7ff); font-family:Poppins,sans-serif; overflow-x:hidden; }
+    .particle-container { position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:1; }
+    .container { width:90%; max-width:900px; margin:5vh auto; background:rgba(255,255,255,0.85); border-radius:20px; box-shadow:0 0 50px rgba(255,192,203,0.4); overflow:hidden; position:relative; }
+    .section { padding:30px; max-height:80vh; overflow-y:auto; position:relative; }
+
+    h1 { text-align:center; font-size:2.5em; color:#ff5e99; text-shadow:0 0 10px rgba(255,105,180,0.4); opacity:0; animation:fadeIn 2s forwards; }
+    h2 { text-align:center; font-size:2em; color:#e04f88; margin-bottom:20px; opacity:0; animation:fadeIn 2s 1s forwards; }
+    @keyframes fadeIn { from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
+
+    .letter { white-space:pre-wrap; line-height:1.7; font-size:1.1em; color:#333; opacity:0; animation:fadeIn 2s 1s forwards; }
+    .letter.english { animation-delay:2s; }
+
+    .signature { text-align:center; margin-top:30px; font-family:Pacifico, cursive; font-size:1.4em; color:#000; opacity:0; animation:fadeIn 2s 3s forwards; }
+    .heart-bottom { font-size:2em; text-align:center; animation:pulse 1.5s infinite; }
+
+    @keyframes pulse {0%{transform:scale(1);opacity:0.8;}50%{transform:scale(1.1);opacity:1;}100%{transform:scale(1);opacity:0.8;}}
+
+    .floating-heart {
+      position:absolute; width:15px; height:15px; background:#ff5e99; border-radius:50% 50% 0 0;
+      transform:rotate(-45deg);
+      animation:floatUp 8s infinite ease-in-out;
+      z-index:0;
+    }
+    .floating-heart::before, .floating-heart::after { content:""; position:absolute; width:15px; height:15px; background:#ff5e99; border-radius:50%; }
+    .floating-heart::before { top:-7px; left:0; }
+    .floating-heart::after { left:7px; top:0; }
+    @keyframes floatUp { 0%{transform:translateY(0) scale(1);opacity:1;} 100%{transform:translateY(-100vh) scale(0.8);opacity:0;} }
+
+    .section::-webkit-scrollbar { width:8px; }
+    .section::-webkit-scrollbar-thumb { background:#ff5e99; border-radius:4px; }
+  </style>
+</head>
+<body>
+<div class="sakura-container" id="sakuraContainer"></div>
+
+  <div class="particle-container" id="particles"></div>
+
+  <div class="container">
+    <!-- Section 1 -->
+    <div class="section" id="section1">
+      <h1>To My Forever Love 💗 (drag the pink slider to read more)</h1>
+      <div class="letter">
+heyy babyyy , just know this would be a mix of hindi and english cuz , why not hehehhehe , yaar aap itni pyaari kaise ho meri jaan , like koi itna khoobsurat ho kaise skta hei mujhe yahi samajh nhi aata , likeekekkeeke noonononono not just physical beauty , but the way you think , the way you live the way you do everything has something that attracts me , like yes. I FUCKING LOVE YOU BABY <3 (lets get starteedddddd)
+And the way you always baby me , like just make me feel like i am the younger me , a kid a toddler , i dont show but you dont know how much HOW MUCH i love that , i love being dramatic to be babied by you my darling , it makes me feel safe, it makes me feel warm , i feel safe when you do that , that yeah even if i lost everything someday , you my love would still be up with me till the morning just comforting me and nothing else.
+You wont just sacrifice your sleep for me baby but you would set the whole world on fire , i have that much trust on you my love.
+The way my screentime has increased , not for reels but cause my little princess lives inside of my phone and we are living this life together arent we <3.
+And you know whenever you like , showed your sensitive side , each time it was me falling in love with you instead of wanting to give up on my pretty baby yaar , dont worry , i dont , i never would feel like i am getting burdened , you sharing your thoughts your insecurities , is is is the BEST FUCKING GIFT SOMEONE COULD EVER GIVE TO ME <3 YOU INDEED ARE THE BEST FUCKING GIVE TO ME MY LOVE.
+You know babe, I sometimes sit there staring at our old texts, just re-reading the same things for the hundredth time, and it still feels like the first time you said it. Every “BRO (HMPH)”, every “I LOVE YOU”, every “MWAHHHHH”, it’s all still living in my head like a full-ass Netflix series that I never want to end. I could live inside our chats if it meant being close to you always, and I mean that with my whole chest.
+Sometimes I laugh like an idiot in the middle of nowhere, just remembering some stupid thing you said — like THOSE TIMES WHEN YOU CRACKED UP SOME JOKES SOME AMAZING ONES LMAOAOAOAOAOAOAOOAOAOA. BABYYY I SWEAR you make my heart do gymnastics bro like how can someone be this chaotic and this perfect AT THE SAME TIME like explain???
+And yeah, I know I joke around a lot, say dumb things, tease you non-stop — but deep inside I just sit there staring at your name on my screen and go like, “yep… that’s my whole heart right there.” Like what do I even need in life when I have you?? Even food seems secondary sometimes (okay fine not BUTTER CHICKEN but STILL U GET THE POINT :P).
+Also why do you keep getting prettier??? like istg it should be illegal at this point, you wake up looking like a literal ANGEL and I wake up looking like I fought a pillow and lost . But then you call me cute too and boom — confidence LEVEL MAX . Babe you literally make me love myself better just by being in my life.
+Like… remember those nights we stayed up till 3am just talking about everything and nothing?? And I’d be half asleep but still not wanting to hang up cuz of your sweet texts>>> sleep??? yeah those nights? I wanna have a thousand more of those. A million.
+Babe, you don’t even know how safe you make me feel. It’s not about protection or anything — it’s just this weird calm you bring into my chaotic ass brain. Like suddenly everything feels slower, easier, warmer. You're literally like... home.
+AND don’t even get me started on the way you say my name — like there’s something in your voice when you say it. it’s soft. it’s sweet. it's like a lullaby and a scream all in one — cuz it calms me down but also makes my heart race like crazy. like wth woman how do u do that without even trying???
+And idc what anyone says, this isn’t some “online thing” — this is a whole-ass love story. Realer than half the people dating in person. Cuz you know what? We didn’t fall in love by looks. We fell in love by words. By feelings. By souls. And that’s what makes it untouchable. 
+I remember every “good morning”, every “eat food idiot”, every “mwahh” like they’re tattooed on my heart. I remember you crying once and me wishing I could just teleport and hug you so bad. I remember how proud I felt when you opened up about your fears and how honored I felt that you trust me with your heart.
+And oh god — your voice when you’re sleepy??? BAAAAAABYYYYYYYY I swear if I could bottle it up and listen to it on loop I’d never need therapy again . You sound so soft. So baby. So mine. And I don’t care if I sound like a simp rn — I AM ONE. A SIMP FOR MY GIRL. UNAPOLOGETICALLY.
+And you know what drives me mad in the best way possible?? That little “hmph” you do when you're fake mad and still want cuddles??? LIKE STOPPP THAT SHOULD BE ILLEGAL YOU’RE TOO CUTE BROOOOO.
+Also lowkey?? your brain is HOT. Like the way you think, the way you express things, the way you see life — goddamn I could just sit there and listen to you rant about random stuff and I’d be smiling like a damn fool. I love how passionate you are. How soft but strong you are. You're a paradox wrapped in poetry and I FREAKING ADORE YOU.
+I hope you know I’m always watching out for you. Even if I don’t say it sometimes. Even if I’m quiet. I’m still here. Always, always, always yours.
+And I want to see you achieve everything. I want to be there clapping the loudest when you win. I want to hold your hand when you feel like you’re failing. I want to be your loudest cheerleader and your softest hug all at once.
+One day we’ll look back at these messages, these late night chats, these emojis and baby words and we’ll smile. And maybe cry. But mostly smile. Because this was real. This IS real. And we did it. We held on. We loved hard. We stayed true. And we made it.
+I hope when you read this, you’re smiling. I hope your heart feels seen. Loved. Cherished. Because you, my baby, are my light in this whole dark-ass world. You're my warmth in the cold. You're my reason to wake up. My dream to sleep with. My peace. My joy. My love. MY GIRL.
+So yeah, I’ll say it again and again and again:
+I love you.
+I love you more than words.
+More than logic.
+More than timelines and distance and obstacles.
+
+I love you the way the sun loves the sky — always there, even when it’s hidden.
+I love you the way the moon pulls the ocean — always drawn, always needed.
+I love you the way a heart beats — constant, unstoppable, essential.
+
+You are not just “someone I’m dating” — you’re my person. My one. My always. My freaking everything.
+
+So next time you doubt yourself, next time you feel like you're too much or not enough — just come back and read this. Read every damn line. And know that there’s a person out there (me, obviously) who would fight the world to protect your smile.
+
+I will never stop choosing you. Not in this life. Not in the next. Not ever.
+
+You are it for me, baby.
+My love. My light. My little tornado of feelings.
+And I'm so, so lucky to be loved by you.
+
+      </div>
+      <div class="signature">— Your obsessed husband 💞</div>
+    </div>
+
+    <hr style="margin:40px 0; border:none; border-top:2px dashed #ffb2c1;">
+
+    <!-- Section 2 -->
+    <div class="section" id="section2">
+      <h2>To the most beautiful soul I know...</h2>
+      <div class="letter english">
+hey... i don't even know where to start, because talking about you—especially your beauty—is like trying to describe magic using words that were made for ordinary things. and you? you're anything but ordinary, baby.
+
+i swear, when i first saw you, i was stunned. like literally, jaw-on-the-floor type stunned. you weren't just "pretty" or "cute", you were something else entirely. ethereal. mesmerizing. like you walked straight out of a dream i didn’t even know i had. and i'm not even exaggerating. your eyes? they hold universes, babe. like i look at them and forget what i was even worried about. you blink and i lose track of time. they’re not just eyes—they’re little windows into a soul so pure, so deep, so soft, i feel like i could fall into them and never want to come back.
+
+your smile? maa kasam. that smile of yours has ruined me for life. how does one smile carry so much power? it’s soft, yes, but it’s also wild. it makes my heart do flips. like it actually physically hurts me when you don’t smile for long. it’s like the sun disappeared and my world went cold. and when you do smile? bro. everything blooms. the walls in my brain covered with stress and doubt just crumble like they never mattered. your smile is a whole therapy session wrapped in those lips of yours. don't even get me started on your laugh. that beautiful, chaotic, contagious, sometimes-snorty laugh. god i live for that sound. i’d sell my soul just to hear it on loop.
+
+but here's the real thing, the deeper thing, the thing i wish i could scream from mountaintops. your beauty isn’t just skin deep. it's not just the way your hair falls like poetry, or the way your lips curl when you're thinking, or how you look in the golden hour light that makes you look like a goddess sculpted by the heavens. no. your beauty is the way you care. the way you pause mid-sentence to ask if i’m okay. the way you remember the tiniest things i said in passing like months ago. the way you text “drink water idiot” when i forget. that’s the kind of beauty that breaks me.
+
+you're beautiful when you're sleepy and grumpy. you're beautiful when you're mad and ranting (yes, even when you're threatening to punch me). you're beautiful when you're being silly and weird and goofy and just...you. raw, unfiltered you. i love it. i love all of it.
+
+like sometimes i look at you and i think, "damn, god really did something when he made her." you walk into a room—even a digital one—and the energy shifts. suddenly there's color, suddenly there's warmth. you don’t even try to steal attention, but it follows you like a shadow because you’re the light it needs to survive.
+
+baby, your beauty shows in how you treat people. in how you hype up your friends. how you defend those who can't defend themselves. how you give second chances but also know your worth. how you're soft but fierce. kind but strong. you're a balance this world rarely gets right, and i get to witness it in you every single day.
+
+and it blows my mind. every time.
+
+you think you're “too much” sometimes, but let me tell you this—you’re not. you're the perfect amount. the right kind of loud. the right kind of soft. you’re not “too emotional,” you’re just beautifully in tune with your heart. and that? that’s a blessing. you feel deeply and love deeply and care deeply, and it’s the most beautiful thing about you.
+
+and you know what else makes you drop-dead gorgeous? your dreams. the way your eyes light up when you talk about your goals, your passions. your plans for the future. i could listen to you ramble for hours. just watching you glow while talking about the things you love makes me fall in love with you all over again. every. single. time.
+
+like damn babe, you're smart too. not just book-smart or “i got good grades” smart (although you do, and i'm so proud), but emotionally intelligent smart. you read people, you read situations, and you know exactly how to act. you know how to hold space for someone who's hurting. you know how to cheer someone up without even trying. you’re a whole damn blessing in human form.
+
+and the way you take care of me? unmatched. no one holds me like you do. not just physically (although, cuddles from you should honestly be a paid service), but emotionally. mentally. spiritually. you’ve held my hand through storms i didn’t even realize i was walking through until they passed. and each time, there you were—my anchor, my lighthouse, my shelter.
+
+you’re beautiful even when you don’t feel it. even when you have a bad hair day. or when your skin isn’t cooperating. or when you’re feeling “off.” because babe? beauty doesn’t disappear with pimples or tired eyes. it radiates from your soul. and yours is the brightest damn thing in my universe.
+
+sometimes i think about how lucky i am and it actually scares me. like...how did i end up with you? how did i get this masterpiece of a person, this chaotic-soft queen who could destroy my whole emotional system with just one look? and you chose me. YOU CHOSE ME. like wow, i'm still processing that. i think i’ll be processing it forever.
+
+you're beautiful in the way you forgive. in the way you try again. in the way you love like you've never been hurt. you’re beautiful when you cry. when you scream. when you break and rebuild yourself. there’s beauty in every crack, every scar, every “i’m still here.” and trust me babe, that kind of beauty? timeless. eternal. forever.
+
+and don’t get me started on your aesthetic sense. your fashion. your color choices. your photos. your way of making the most ordinary things look like soft Pinterest boards—like seriously, even your messy bun looks intentional. HOW?
+
+you’re beautiful in the way you flirt, the way you tease, the way you make me feel like i’m the only person alive sometimes. when you look at me with those “i adore you” eyes?? bro, my heart just MELTS into soup. and when you call me cute??? i go from “confident boy” to “giggly idiot” in 2 seconds flat. it's embarrassing, but also, do it more please.
+
+you're beautiful when you say “i’m proud of you.” when you cheer for me louder than i do for myself. when you remind me of my worth when i forget. you make me want to be better, not because you ask for it, but because you inspire it.
+
+your beauty is in your voice. your softness. your rage. your care. your chaos. your calm. you are poetry in motion, baby. you are everything.
+
+and i mean it when i say—you’re the most beautiful person i’ve ever known.
+
+i love you in a million different ways, for a million different reasons. and all of them, every single one, comes back to you being the most stunning, heart-wrenchingly beautiful soul this world has ever known.
+
+i don’t need filters. i don’t need makeup. i don’t need poses or perfect lighting. your existence alone is enough to make the stars jealous.
+
+so yeah, i guess what i’m trying to say is… you’re my favorite art. my favorite story. my favorite everything. and i’ll spend the rest of my life telling you that.
+
+and even that won’t be enough.
+
+but i’ll try anyway.
+
+every day.
+
+forever.
+
+because loving you is the most beautiful thing i’ll ever do.
+
+— always, your obsessed poet of a boyfriend 💞
+      </div>
+      <div class="signature">— Your poet, forever yours 💞</div>
+      <div class="heart-bottom">❤️</div>
+    </div>
+  </div>
+
+  <script>
+  const container = document.getElementById('particles');
+
+  function spawnHeart() {
+    const heart = document.createElement('div');
+    heart.className = 'floating-heart';
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.animationDuration = 4 + Math.random() * 3 + 's';
+    container.appendChild(heart);
+
+    setTimeout(() => {
+      heart.remove();
+    }, 7000);
+  }
+
+  // Spawn 1 heart every 500ms
+  setInterval(spawnHeart, 500);
+function createPetal() {
+  const petal = document.createElement('div');
+  petal.classList.add('sakura');
+  petal.style.left = Math.random() * window.innerWidth + 'px';
+  petal.style.animationDuration = (5 + Math.random() * 5) + 's';
+  petal.style.animationDelay = Math.random() * 5 + 's';
+  document.getElementById('sakuraContainer').appendChild(petal);
+
+  setTimeout(() => {
+    petal.remove();
+  }, 10000);
+}
+
+setInterval(createPetal, 300);
+
+  </script>
+<a href="final-card.html" class="to-final-page-btn">To Us, Forever →</a>
+</body>
+</html>
