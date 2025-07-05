@@ -11,6 +11,55 @@ body {
   box-shadow: inset 0 0 200px rgba(255, 183, 197, 0.2);
   background-attachment: fixed;
 }
+#preloader {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+  color: #ff4d6d;
+  transition: opacity 0.5s ease;
+}
+
+.heart-loader {
+  width: 50px;
+  height: 45px;
+  position: relative;
+  background: #ff4d6d;
+  transform: rotate(-45deg);
+  animation: beat 1s infinite;
+  margin-bottom: 10px;
+}
+
+.heart-loader::before,
+.heart-loader::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 45px;
+  background: #ff4d6d;
+  border-radius: 50%;
+}
+
+.heart-loader::before {
+  top: -25px;
+  left: 0;
+}
+
+.heart-loader::after {
+  left: 25px;
+  top: 0;
+}
+
+@keyframes beat {
+  0%, 100% { transform: rotate(-45deg) scale(1); }
+  50% { transform: rotate(-45deg) scale(1.2); }
+}
 
 .container {
   text-align: center;
